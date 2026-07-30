@@ -49,3 +49,6 @@ const ARTWORKS = [
   { code:"MT-012", img:"12", title:"Untitled", year:"", size:"", mat:"", time:"",
     desc:"Details available on request.", pending:true },
 ];
+
+/* expose to other scripts (a top-level `const` is NOT a window property) */
+window.ARTWORKS = ARTWORKS;
