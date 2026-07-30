@@ -42,12 +42,6 @@ const ARTWORKS = [
     desc:"Details available on request.", pending:true },
   { code:"MT-009", img:"09", title:"Untitled", year:"", size:"", mat:"", time:"",
     desc:"Details available on request.", pending:true },
-  { code:"MT-010", img:"10", title:"Untitled", year:"", size:"", mat:"", time:"",
-    desc:"Details available on request.", pending:true },
-  { code:"MT-011", img:"11", title:"Untitled", year:"", size:"", mat:"", time:"",
-    desc:"Details available on request.", pending:true },
-  { code:"MT-012", img:"12", title:"Untitled", year:"", size:"", mat:"", time:"",
-    desc:"Details available on request.", pending:true },
 ];
 
 /* expose to other scripts (a top-level `const` is NOT a window property) */

@@ -99,9 +99,9 @@
     $("#lb-title").textContent = a.pending ? "Untitled" : a.title;
     const rows = [];
     if (a.year) rows.push(["Year", a.year]);
-    if (a.size) rows.push(["Artwork", a.size]);
-    if (a.mat)  rows.push(["With mount", a.mat]);
-    if (a.time) rows.push(["Made in", a.time]);
+    if (a.time) rows.push(["Time to Complete", a.time]);
+    if (a.mat)  rows.push(["Size (with Passe-Partout)", a.mat]);
+    if (a.size) rows.push(["Artwork Size", a.size]);
     $("#lb-dl").innerHTML = rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("");
     $("#lb-desc").textContent = a.desc || "";
     $("#lb-inquire").href = "inquiry.html?code=" + encodeURIComponent(a.code);
@@ -125,9 +125,10 @@
   const sel = $("#artwork-select");
   if (sel && window.ARTWORKS) {
     ARTWORKS.forEach(a => {
+      if (a.pending) return; /* only list fully-documented pieces */
       const o = document.createElement("option");
       o.value = a.code;
-      o.textContent = a.code + (a.pending ? "" : " — " + a.title);
+      o.textContent = a.code + " — " + a.title;
       sel.appendChild(o);
     });
     const q = new URLSearchParams(location.search).get("code");
