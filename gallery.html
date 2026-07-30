@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Matin Zayerebrahimi</title>
+<meta name="description" content="Gallery of Persian miniature paintings by Matin Zayerebrahimi. Hover to look closely into each piece.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/images/artworks/13S.webp">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="name">MATIN</span><span class="sub">Persian Miniature</span></a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="inquiry.html">Inquire</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-head wrap">
+  <p class="eyebrow" style="text-align:center;padding-left:.42em">The Collection</p>
+  <h1>Gallery</h1>
+  <p>Each piece is painted by hand over many weeks. <span class="hint">Hover to look closely — the loupe follows your eye.</span></p>
+  <div class="rule tight">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 6 C24 14 34 16 34 20 C34 24 24 26 20 34 C16 26 6 24 6 20 C6 16 16 14 20 6Z"/></svg>
+  </div>
+</section>
+
+<section class="gallery wrap">
+  <div id="masonry" class="masonry"><!-- rendered from artworks.js --></div>
+</section>
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div id="lightbox" class="lb" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" aria-label="Previous">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="15 5 8 12 15 19"/></svg>
+  </button>
+  <div class="lb-inner">
+    <div class="lb-figure"><img id="lb-img" src="" alt=""></div>
+    <div class="lb-info">
+      <div class="code" id="lb-code"></div>
+      <h3 id="lb-title"></h3>
+      <dl id="lb-dl"></dl>
+      <p class="desc" id="lb-desc"></p>
+      <a id="lb-inquire" class="btn solid" href="inquiry.html">Purchase inquiry</a>
+    </div>
+  </div>
+  <button class="lb-nav lb-next" aria-label="Next">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polyline points="9 5 16 12 9 19"/></svg>
+  </button>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <svg class="shamsa" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+      <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="8"/>
+      <path d="M50 42 C46 34 46 26 50 20 C54 26 54 34 50 42Z"/><path d="M50 58 C46 66 46 74 50 80 C54 74 54 66 50 58Z"/>
+      <path d="M42 50 C34 46 26 46 20 50 C26 54 34 54 42 50Z"/><path d="M58 50 C66 46 74 46 80 50 C74 54 66 54 58 50Z"/>
+    </svg>
+    <div class="contacts">
+      <a href="tel:+971585521716">+971 58 552 1716</a>
+      <a href="mailto:hello@matinatelier.art">hello@matinatelier.art</a>
+      <a href="https://instagram.com/MatinAtelier" target="_blank" rel="noopener">@MatinAtelier</a>
+    </div>
+    <div class="copy">© 2025 Matin Atelier · All rights reserved</div>
+  </div>
+</footer>
+
+<script src="assets/js/artworks.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

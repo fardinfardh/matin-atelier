@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Purchase Inquiry — Matin Zayerebrahimi</title>
+<meta name="description" content="Enquire about acquiring a Persian miniature painting by Matin Zayerebrahimi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/images/artworks/13S.webp">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="name">MATIN</span><span class="sub">Persian Miniature</span></a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="inquiry.html" class="active">Inquire</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-head wrap">
+  <p class="eyebrow" style="text-align:center;padding-left:.42em">Acquisitions</p>
+  <h1>Purchase Inquiry</h1>
+  <p>Interested in a piece? Note its code (e.g. <em>MT-003</em>) and send a message.<br>Matin will reply personally about availability, pricing, framing, and shipping.</p>
+  <div class="rule tight">
+    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 6 C24 14 34 16 34 20 C34 24 24 26 20 34 C16 26 6 24 6 20 C6 16 16 14 20 6Z"/></svg>
+  </div>
+</section>
+
+<section class="inquiry wrap">
+  <div class="narrow">
+    <div class="form-card">
+      <!-- Netlify Forms: name + data-netlify + honeypot. Submissions are
+           emailed to the address configured in the Netlify dashboard. -->
+      <form id="inquiry-form" name="purchase-inquiry" method="POST"
+            data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="purchase-inquiry">
+        <p class="hp"><label>Leave this field empty <input name="bot-field"></label></p>
+
+        <div class="field">
+          <label for="artwork-select">Artwork code <span class="req">*</span></label>
+          <select id="artwork-select" name="artwork" required>
+            <option value="" disabled selected>Select a piece…</option>
+            <!-- options injected from artworks.js -->
+          </select>
+          <p class="form-note">Not sure of the code? Browse the <a href="gallery.html" style="color:var(--gold)">gallery</a> — each piece shows its code (MT-000).</p>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Your name <span class="req">*</span></label>
+            <input id="f-name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-email">Email <span class="req">*</span></label>
+            <input id="f-email" name="email" type="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Message <span class="req">*</span></label>
+          <textarea id="f-msg" name="message" required placeholder="I would love to know more about this piece…"></textarea>
+        </div>
+
+        <button class="btn solid" type="submit" style="width:100%;justify-content:center">Send inquiry</button>
+        <p class="form-note" style="text-align:center;margin-top:1rem">Or email directly: <a href="mailto:hello@matinatelier.art" style="color:var(--gold)">hello@matinatelier.art</a></p>
+      </form>
+
+      <div id="form-success" class="form-success">
+        <svg viewBox="0 0 40 40" fill="none" stroke="var(--gold)" stroke-width="1" style="width:52px;height:52px;margin:0 auto 1rem"><path d="M20 6 C24 14 34 16 34 20 C34 24 24 26 20 34 C16 26 6 24 6 20 C6 16 16 14 20 6Z"/><polyline points="14 20 18 24 26 15"/></svg>
+        <h2 style="margin-bottom:.6rem">Thank you</h2>
+        <p class="lead" style="font-style:normal">Your inquiry has been sent. Matin will be in touch soon.</p>
+        <a class="link-quiet" href="gallery.html" style="margin-top:1rem;display:inline-flex">← Back to the gallery</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <svg class="shamsa" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+      <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="8"/>
+      <path d="M50 42 C46 34 46 26 50 20 C54 26 54 34 50 42Z"/><path d="M50 58 C46 66 46 74 50 80 C54 74 54 66 50 58Z"/>
+      <path d="M42 50 C34 46 26 46 20 50 C26 54 34 54 42 50Z"/><path d="M58 50 C66 46 74 46 80 50 C74 54 66 54 58 50Z"/>
+    </svg>
+    <div class="contacts">
+      <a href="tel:+971585521716">+971 58 552 1716</a>
+      <a href="mailto:hello@matinatelier.art">hello@matinatelier.art</a>
+      <a href="https://instagram.com/MatinAtelier" target="_blank" rel="noopener">@MatinAtelier</a>
+    </div>
+    <div class="copy">© 2025 Matin Atelier · All rights reserved</div>
+  </div>
+</footer>
+
+<script src="assets/js/artworks.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
