@@ -27,11 +27,11 @@
     ARTWORKS.forEach((a, i) => {
       const fig = document.createElement("figure");
       fig.className = "art";
-      fig.style.transitionDelay = (i % 3) * 90 + "ms";
+      fig.style.animationDelay = (i % 3) * 90 + "ms";
       fig.innerHTML = `
         <div class="frame" data-i="${i}" role="button" tabindex="0"
              aria-label="View ${a.title} (${a.code}) larger">
-          <img class="base" src="${BASE}${a.img}S.webp" alt="${a.title} — Persian miniature by Matin" loading="lazy">
+          <img class="base" src="${BASE}${a.img}S.webp" alt="${a.title} — Persian miniature by Matin">
           <div class="loupe" data-zoom="${BASE}${a.img}M.webp"></div>
         </div>
         <figcaption>
