@@ -72,11 +72,13 @@
       });
     });
 
-    /* reveal on scroll */
+    /* reveal on scroll (threshold 0 so zero-height cards still trigger) */
     const io = new IntersectionObserver((ents) => {
       ents.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, { threshold: 0.12 });
+    }, { threshold: 0, rootMargin: "0px 0px 12% 0px" });
     $$(".art", grid).forEach(el => io.observe(el));
+    /* safety net: never leave artworks hidden if the observer misses */
+    setTimeout(() => $$(".art:not(.in)", grid).forEach(el => el.classList.add("in")), 700);
   }
 
   /* ============================================================
