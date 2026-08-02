@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 <link rel="icon" href="assets/images/artworks/13S.webp">
 </head>
 <body>
@@ -41,12 +41,13 @@
 <section class="inquiry wrap">
   <div class="narrow">
     <div class="form-card">
-      <!-- Netlify Forms: name + data-netlify + honeypot. Submissions are
-           emailed to the address configured in the Netlify dashboard. -->
-      <form id="inquiry-form" name="purchase-inquiry" method="POST"
-            data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="purchase-inquiry">
-        <p class="hp"><label>Leave this field empty <input name="bot-field"></label></p>
+      <!-- Submissions are sent via Formsubmit.co (AJAX) to hello@matinatelier.art.
+           First submission triggers a one-time activation email to confirm the address. -->
+      <form id="inquiry-form" method="POST">
+        <input type="hidden" name="_subject" value="New purchase inquiry — matinatelier.art">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <p class="hp"><label>Leave this field empty <input name="_honey"></label></p>
 
         <div class="field">
           <label for="artwork-select">Artwork code <span class="req">*</span></label>
@@ -104,7 +105,7 @@
   </div>
 </footer>
 
-<script src="assets/js/artworks.js?v=6"></script>
-<script src="assets/js/main.js?v=6"></script>
+<script src="assets/js/artworks.js?v=7"></script>
+<script src="assets/js/main.js?v=7"></script>
 </body>
 </html>

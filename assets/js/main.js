@@ -139,10 +139,17 @@
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const data = new URLSearchParams(new FormData(form)).toString();
-      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data })
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      const payload = Object.fromEntries(new FormData(form));
+      fetch("https://formsubmit.co/ajax/hello@matinatelier.art", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(r => { if (!r.ok) throw new Error("bad status"); return r.json(); })
         .then(() => { form.style.display = "none"; $("#form-success").classList.add("show"); window.scrollTo({ top: form.offsetTop - 120, behavior: "smooth" }); })
-        .catch(() => { form.querySelector(".form-note-error")?.classList.add("show"); alert("Something went wrong. Please email hello@matinatelier.art directly."); });
+        .catch(() => { if (btn) { btn.disabled = false; btn.textContent = "Send inquiry"; } alert("Something went wrong. Please email hello@matinatelier.art directly."); });
     });
   }
 })();
