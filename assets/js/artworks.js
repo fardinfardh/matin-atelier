@@ -40,8 +40,6 @@ const ARTWORKS = [
   /* ---- awaiting final details (edit title/year/size/desc) ---- */
   { code:"MT-006", img:"06", title:"Untitled", year:"", size:"", mat:"", time:"",
     desc:"Details available on request.", pending:true },
-  { code:"MT-009", img:"09", title:"Untitled", year:"", size:"", mat:"", time:"",
-    desc:"Details available on request.", pending:true },
 ];
 
 /* expose to other scripts (a top-level `const` is NOT a window property) */
